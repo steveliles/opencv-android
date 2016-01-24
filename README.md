@@ -37,10 +37,10 @@ If you don't like the user-experience that this presents, or are worried that an
 
 Building OpenCV-3.0.0 for Android is actually quite simple:
 
-# Create a Library Project in Android Studio
-# Drop the OpenCV native libraries into src/main/jniLibs
-# Run the gradle build
-# Et voila, .aar file
+1. Create a Library Project in Android Studio
+2. Drop the OpenCV native libraries into src/main/jniLibs
+3. Run the gradle build
+4. Et voila, .aar file
 
 If you naively build an app with this .aar file, it will include all of the native libs for all architectures in a single APK, which will immediately push your APK over 50MB without counting any of your own code, resources or assets.
 
