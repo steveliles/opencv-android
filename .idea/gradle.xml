@@ -8,13 +8,13 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/lib" />
+            <option value="$PROJECT_DIR$/OpenCV-Android" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/lib" />
+            <option value="$PROJECT_DIR$/OpenCV-Android" />
           </set>
         </option>
       </GradleProjectSettings>

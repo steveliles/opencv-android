@@ -1,14 +1,38 @@
 # opencv-android-3.0.0
 
-### TL;DR
+OpenCV4Android, packaged as a .aar for direct use without depending on the stupid OpenCV Manager app.
 
-Include the "example" .aar in your build.gradle file:
+### Building an .aar of OpenCV-3.x for yourself
 
-    dependencies {
-      compile ''
+Building OpenCV-3.0.0 for Android is actually quite simple, its just not obvious where to get the pieces and the OpenCV docs hard-sell the "OpenCV Manager" in favour of the better and easier direct integration approach.
+
+Here's the steps I used to create my .aar:
+
+1. Download and extract the OpenCV4Android bundle
+2. Create a Library Project in Android Studio
+3. Copy the java source files from OpenCV4Android into src/main/java
+4. Drop the OpenCV native libraries into src/main/jniLibs
+5. Run the gradle build
+6. Et voila, .aar file
+
+Reference the maven repository you've deployed your .aar to, e.g. mine (which I can't stop you from using ;)) is:
+
+    allprojects {
+      repositories {
+        jcenter()
+        maven {
+           url  "http://dl.bintray.com/steveliles/maven" 
+        }
+      }
     }
 
-Build separate APK's per architecture, to keep the downloaded APK size to a minimum:
+Include the .aar in your build.gradle file:
+
+    dependencies {
+      compile 'org.opencv:OpenCV-Android:3.0.0'
+    }
+
+Optional but recommended: to keep the downloaded APK size to a minimum, build separate APK's per architecture (approx 10MB each vs 42MB for universal):
 
     splits {
       abi {
@@ -19,34 +43,7 @@ Build separate APK's per architecture, to keep the downloaded APK size to a mini
       }
     }
 
-### Details
-
-An "Example" Android Library Project for OpenCV 3.0.0
-
-OpenCV is awesome, but getting started using it on Android is too awkward: Why can't I just reference a gradle dependency and just get on with it?
-
-The OpenCV documentation for Android recommends using the "dynamic" method for making OpenCV available to your apps, via the OpenCV Manager application. The claimed advantages of the dynamic method are:
-
-* minimal download
-* automatic updates to newer opencv versions
-* some mysterious optimisations are turned on
-
-If you don't like the user-experience that this presents, or are worried that an automatic update might break your app in a way that is outside of your control, you need to use the "static" approach of bundling the native libs in your own project. This isn't particularly well documented, and unless you know how to set up your application project properly you'll end up with 50MB+ APK's stuffed full of native libs.
-
-### Building an .aar of OpenCV-3.x
-
-Building OpenCV-3.0.0 for Android is actually quite simple:
-
-1. Create a Library Project in Android Studio
-2. Drop the OpenCV native libraries into src/main/jniLibs
-3. Run the gradle build
-4. Et voila, .aar file
-
-If you naively build an app with this .aar file, it will include all of the native libs for all architectures in a single APK, which will immediately push your APK over 50MB without counting any of your own code, resources or assets.
-
-To minimize the build size you'll need to split your APK's by ABI. To do this, add the "splits" section to the configuration of the android gradle plugin in your app's build.gradle (see the splits example above).
-
-
+Disclaimer: This project is simply my bundling of OpenCV as an Android Library. I am not otherwise involved in the OpenCV project, and all credit for the wonderful OpenCV library goes to the developers thereof.
 
 
 
