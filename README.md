@@ -15,6 +15,8 @@ Here's the steps I used to create my .aar:
 5. Run the gradle build
 6. Et voila, .aar file
 
+### Using your glorious new .aar
+
 Reference the maven repository you've deployed your .aar to, e.g. mine (which I can't stop you from using ;)) is:
 
     allprojects {
@@ -31,8 +33,18 @@ Include the .aar in your build.gradle file:
     dependencies {
       compile 'org.opencv:OpenCV-Android:3.0.0'
     }
+    
+Bootstrap OpenCV in your Java code:
+    
+    import org.opencv.android.OpenCVLoader;
+    
+    ...
+    
+    if (OpenCVLoader.initDebug()) {
+      // do some opencv stuff
+    }
 
-Optional but recommended: to keep the downloaded APK size to a minimum, build separate APK's per architecture (approx 10MB each vs 42MB for universal):
+Optional but recommended: to keep the downloaded APK size to a minimum, build separate APK's per architecture (approx 10MB each vs 42MB for universal) by placing the following inside the 'android' gradle directive of your application's build.gradle:
 
     splits {
       abi {
