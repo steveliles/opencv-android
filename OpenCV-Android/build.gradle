@@ -1,5 +1,5 @@
 group = 'org.opencv'
-version = '3.0.0'
+version = '3.1.0'
 
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
@@ -24,8 +24,8 @@ android {
     }
 }
 
-def siteUrl = 'https://github.com/steveliles/opencv-android-3.0.0'
-def gitUrl = 'https://github.com/steveliles/opencv-android-3.0.0.git'
+def siteUrl = 'https://github.com/steveliles/opencv-android'
+def gitUrl = 'https://github.com/steveliles/opencv-android.git'
 
 bintray {
     user = bintrayUser
@@ -40,7 +40,7 @@ bintray {
         licenses = ["BSD 3-Clause"]
         publish = true
         version {
-            name = '3.0.0'
+            name = '3.1.0'
         }
         labels = ['aar', 'android']
     }

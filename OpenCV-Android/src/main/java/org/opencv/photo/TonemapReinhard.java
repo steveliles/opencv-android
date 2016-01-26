@@ -14,6 +14,20 @@ public class TonemapReinhard extends Tonemap {
 
 
     //
+    // C++:  float getColorAdaptation()
+    //
+
+    //javadoc: TonemapReinhard::getColorAdaptation()
+    public  float getColorAdaptation()
+    {
+        
+        float retVal = getColorAdaptation_0(nativeObj);
+        
+        return retVal;
+    }
+
+
+    //
     // C++:  float getIntensity()
     //
 
@@ -28,20 +42,6 @@ public class TonemapReinhard extends Tonemap {
 
 
     //
-    // C++:  void setIntensity(float intensity)
-    //
-
-    //javadoc: TonemapReinhard::setIntensity(intensity)
-    public  void setIntensity(float intensity)
-    {
-        
-        setIntensity_0(nativeObj, intensity);
-        
-        return;
-    }
-
-
-    //
     // C++:  float getLightAdaptation()
     //
 
@@ -50,34 +50,6 @@ public class TonemapReinhard extends Tonemap {
     {
         
         float retVal = getLightAdaptation_0(nativeObj);
-        
-        return retVal;
-    }
-
-
-    //
-    // C++:  void setLightAdaptation(float light_adapt)
-    //
-
-    //javadoc: TonemapReinhard::setLightAdaptation(light_adapt)
-    public  void setLightAdaptation(float light_adapt)
-    {
-        
-        setLightAdaptation_0(nativeObj, light_adapt);
-        
-        return;
-    }
-
-
-    //
-    // C++:  float getColorAdaptation()
-    //
-
-    //javadoc: TonemapReinhard::getColorAdaptation()
-    public  float getColorAdaptation()
-    {
-        
-        float retVal = getColorAdaptation_0(nativeObj);
         
         return retVal;
     }
@@ -97,6 +69,34 @@ public class TonemapReinhard extends Tonemap {
     }
 
 
+    //
+    // C++:  void setIntensity(float intensity)
+    //
+
+    //javadoc: TonemapReinhard::setIntensity(intensity)
+    public  void setIntensity(float intensity)
+    {
+        
+        setIntensity_0(nativeObj, intensity);
+        
+        return;
+    }
+
+
+    //
+    // C++:  void setLightAdaptation(float light_adapt)
+    //
+
+    //javadoc: TonemapReinhard::setLightAdaptation(light_adapt)
+    public  void setLightAdaptation(float light_adapt)
+    {
+        
+        setLightAdaptation_0(nativeObj, light_adapt);
+        
+        return;
+    }
+
+
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -104,23 +104,23 @@ public class TonemapReinhard extends Tonemap {
 
 
 
+    // C++:  float getColorAdaptation()
+    private static native float getColorAdaptation_0(long nativeObj);
+
     // C++:  float getIntensity()
     private static native float getIntensity_0(long nativeObj);
-
-    // C++:  void setIntensity(float intensity)
-    private static native void setIntensity_0(long nativeObj, float intensity);
 
     // C++:  float getLightAdaptation()
     private static native float getLightAdaptation_0(long nativeObj);
 
-    // C++:  void setLightAdaptation(float light_adapt)
-    private static native void setLightAdaptation_0(long nativeObj, float light_adapt);
-
-    // C++:  float getColorAdaptation()
-    private static native float getColorAdaptation_0(long nativeObj);
-
     // C++:  void setColorAdaptation(float color_adapt)
     private static native void setColorAdaptation_0(long nativeObj, float color_adapt);
+
+    // C++:  void setIntensity(float intensity)
+    private static native void setIntensity_0(long nativeObj, float intensity);
+
+    // C++:  void setLightAdaptation(float light_adapt)
+    private static native void setLightAdaptation_0(long nativeObj, float light_adapt);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

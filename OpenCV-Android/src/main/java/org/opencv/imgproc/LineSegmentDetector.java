@@ -16,6 +16,29 @@ public class LineSegmentDetector extends Algorithm {
 
 
     //
+    // C++:  int compareSegments(Size size, Mat lines1, Mat lines2, Mat& _image = Mat())
+    //
+
+    //javadoc: LineSegmentDetector::compareSegments(size, lines1, lines2, _image)
+    public  int compareSegments(Size size, Mat lines1, Mat lines2, Mat _image)
+    {
+        
+        int retVal = compareSegments_0(nativeObj, size.width, size.height, lines1.nativeObj, lines2.nativeObj, _image.nativeObj);
+        
+        return retVal;
+    }
+
+    //javadoc: LineSegmentDetector::compareSegments(size, lines1, lines2)
+    public  int compareSegments(Size size, Mat lines1, Mat lines2)
+    {
+        
+        int retVal = compareSegments_1(nativeObj, size.width, size.height, lines1.nativeObj, lines2.nativeObj);
+        
+        return retVal;
+    }
+
+
+    //
     // C++:  void detect(Mat _image, Mat& _lines, Mat& width = Mat(), Mat& prec = Mat(), Mat& nfa = Mat())
     //
 
@@ -52,29 +75,6 @@ public class LineSegmentDetector extends Algorithm {
     }
 
 
-    //
-    // C++:  int compareSegments(Size size, Mat lines1, Mat lines2, Mat& _image = Mat())
-    //
-
-    //javadoc: LineSegmentDetector::compareSegments(size, lines1, lines2, _image)
-    public  int compareSegments(Size size, Mat lines1, Mat lines2, Mat _image)
-    {
-        
-        int retVal = compareSegments_0(nativeObj, size.width, size.height, lines1.nativeObj, lines2.nativeObj, _image.nativeObj);
-        
-        return retVal;
-    }
-
-    //javadoc: LineSegmentDetector::compareSegments(size, lines1, lines2)
-    public  int compareSegments(Size size, Mat lines1, Mat lines2)
-    {
-        
-        int retVal = compareSegments_1(nativeObj, size.width, size.height, lines1.nativeObj, lines2.nativeObj);
-        
-        return retVal;
-    }
-
-
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -82,16 +82,16 @@ public class LineSegmentDetector extends Algorithm {
 
 
 
+    // C++:  int compareSegments(Size size, Mat lines1, Mat lines2, Mat& _image = Mat())
+    private static native int compareSegments_0(long nativeObj, double size_width, double size_height, long lines1_nativeObj, long lines2_nativeObj, long _image_nativeObj);
+    private static native int compareSegments_1(long nativeObj, double size_width, double size_height, long lines1_nativeObj, long lines2_nativeObj);
+
     // C++:  void detect(Mat _image, Mat& _lines, Mat& width = Mat(), Mat& prec = Mat(), Mat& nfa = Mat())
     private static native void detect_0(long nativeObj, long _image_nativeObj, long _lines_nativeObj, long width_nativeObj, long prec_nativeObj, long nfa_nativeObj);
     private static native void detect_1(long nativeObj, long _image_nativeObj, long _lines_nativeObj);
 
     // C++:  void drawSegments(Mat& _image, Mat lines)
     private static native void drawSegments_0(long nativeObj, long _image_nativeObj, long lines_nativeObj);
-
-    // C++:  int compareSegments(Size size, Mat lines1, Mat lines2, Mat& _image = Mat())
-    private static native int compareSegments_0(long nativeObj, double size_width, double size_height, long lines1_nativeObj, long lines2_nativeObj, long _image_nativeObj);
-    private static native int compareSegments_1(long nativeObj, double size_width, double size_height, long lines1_nativeObj, long lines2_nativeObj);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

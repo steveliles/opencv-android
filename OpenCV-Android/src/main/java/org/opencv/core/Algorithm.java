@@ -15,6 +15,20 @@ public class Algorithm {
 
 
     //
+    // C++:  String getDefaultName()
+    //
+
+    //javadoc: Algorithm::getDefaultName()
+    public  String getDefaultName()
+    {
+        
+        String retVal = getDefaultName_0(nativeObj);
+        
+        return retVal;
+    }
+
+
+    //
     // C++:  void clear()
     //
 
@@ -42,20 +56,6 @@ public class Algorithm {
     }
 
 
-    //
-    // C++:  String getDefaultName()
-    //
-
-    //javadoc: Algorithm::getDefaultName()
-    public  String getDefaultName()
-    {
-        
-        String retVal = getDefaultName_0(nativeObj);
-        
-        return retVal;
-    }
-
-
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -63,14 +63,14 @@ public class Algorithm {
 
 
 
+    // C++:  String getDefaultName()
+    private static native String getDefaultName_0(long nativeObj);
+
     // C++:  void clear()
     private static native void clear_0(long nativeObj);
 
     // C++:  void save(String filename)
     private static native void save_0(long nativeObj, String filename);
-
-    // C++:  String getDefaultName()
-    private static native String getDefaultName_0(long nativeObj);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

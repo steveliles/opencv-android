@@ -15,6 +15,48 @@ public class RTrees extends DTrees {
 
 
     //
+    // C++:  Mat getVarImportance()
+    //
+
+    //javadoc: RTrees::getVarImportance()
+    public  Mat getVarImportance()
+    {
+        
+        Mat retVal = new Mat(getVarImportance_0(nativeObj));
+        
+        return retVal;
+    }
+
+
+    //
+    // C++: static Ptr_RTrees create()
+    //
+
+    //javadoc: RTrees::create()
+    public static RTrees create()
+    {
+        
+        RTrees retVal = new RTrees(create_0());
+        
+        return retVal;
+    }
+
+
+    //
+    // C++:  TermCriteria getTermCriteria()
+    //
+
+    //javadoc: RTrees::getTermCriteria()
+    public  TermCriteria getTermCriteria()
+    {
+        
+        TermCriteria retVal = new TermCriteria(getTermCriteria_0(nativeObj));
+        
+        return retVal;
+    }
+
+
+    //
     // C++:  bool getCalculateVarImportance()
     //
 
@@ -25,20 +67,6 @@ public class RTrees extends DTrees {
         boolean retVal = getCalculateVarImportance_0(nativeObj);
         
         return retVal;
-    }
-
-
-    //
-    // C++:  void setCalculateVarImportance(bool val)
-    //
-
-    //javadoc: RTrees::setCalculateVarImportance(val)
-    public  void setCalculateVarImportance(boolean val)
-    {
-        
-        setCalculateVarImportance_0(nativeObj, val);
-        
-        return;
     }
 
 
@@ -71,16 +99,16 @@ public class RTrees extends DTrees {
 
 
     //
-    // C++:  TermCriteria getTermCriteria()
+    // C++:  void setCalculateVarImportance(bool val)
     //
 
-    //javadoc: RTrees::getTermCriteria()
-    public  TermCriteria getTermCriteria()
+    //javadoc: RTrees::setCalculateVarImportance(val)
+    public  void setCalculateVarImportance(boolean val)
     {
         
-        TermCriteria retVal = new TermCriteria(getTermCriteria_0(nativeObj));
+        setCalculateVarImportance_0(nativeObj, val);
         
-        return retVal;
+        return;
     }
 
 
@@ -98,34 +126,6 @@ public class RTrees extends DTrees {
     }
 
 
-    //
-    // C++:  Mat getVarImportance()
-    //
-
-    //javadoc: RTrees::getVarImportance()
-    public  Mat getVarImportance()
-    {
-        
-        Mat retVal = new Mat(getVarImportance_0(nativeObj));
-        
-        return retVal;
-    }
-
-
-    //
-    // C++: static Ptr_RTrees create()
-    //
-
-    //javadoc: RTrees::create()
-    public static RTrees create()
-    {
-        
-        RTrees retVal = new RTrees(create_0());
-        
-        return retVal;
-    }
-
-
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -133,11 +133,17 @@ public class RTrees extends DTrees {
 
 
 
+    // C++:  Mat getVarImportance()
+    private static native long getVarImportance_0(long nativeObj);
+
+    // C++: static Ptr_RTrees create()
+    private static native long create_0();
+
+    // C++:  TermCriteria getTermCriteria()
+    private static native double[] getTermCriteria_0(long nativeObj);
+
     // C++:  bool getCalculateVarImportance()
     private static native boolean getCalculateVarImportance_0(long nativeObj);
-
-    // C++:  void setCalculateVarImportance(bool val)
-    private static native void setCalculateVarImportance_0(long nativeObj, boolean val);
 
     // C++:  int getActiveVarCount()
     private static native int getActiveVarCount_0(long nativeObj);
@@ -145,17 +151,11 @@ public class RTrees extends DTrees {
     // C++:  void setActiveVarCount(int val)
     private static native void setActiveVarCount_0(long nativeObj, int val);
 
-    // C++:  TermCriteria getTermCriteria()
-    private static native double[] getTermCriteria_0(long nativeObj);
+    // C++:  void setCalculateVarImportance(bool val)
+    private static native void setCalculateVarImportance_0(long nativeObj, boolean val);
 
     // C++:  void setTermCriteria(TermCriteria val)
     private static native void setTermCriteria_0(long nativeObj, int val_type, int val_maxCount, double val_epsilon);
-
-    // C++:  Mat getVarImportance()
-    private static native long getVarImportance_0(long nativeObj);
-
-    // C++: static Ptr_RTrees create()
-    private static native long create_0();
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

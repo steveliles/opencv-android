@@ -4,8 +4,11 @@
 //
 package org.opencv.ml;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.opencv.core.Mat;
 import org.opencv.core.TermCriteria;
+import org.opencv.utils.Converters;
 
 // C++: class EM
 //javadoc: EM
@@ -27,86 +30,16 @@ public class EM extends StatModel {
 
 
     //
-    // C++:  int getClustersNumber()
+    // C++:  Mat getMeans()
     //
 
-    //javadoc: EM::getClustersNumber()
-    public  int getClustersNumber()
+    //javadoc: EM::getMeans()
+    public  Mat getMeans()
     {
         
-        int retVal = getClustersNumber_0(nativeObj);
+        Mat retVal = new Mat(getMeans_0(nativeObj));
         
         return retVal;
-    }
-
-
-    //
-    // C++:  void setClustersNumber(int val)
-    //
-
-    //javadoc: EM::setClustersNumber(val)
-    public  void setClustersNumber(int val)
-    {
-        
-        setClustersNumber_0(nativeObj, val);
-        
-        return;
-    }
-
-
-    //
-    // C++:  int getCovarianceMatrixType()
-    //
-
-    //javadoc: EM::getCovarianceMatrixType()
-    public  int getCovarianceMatrixType()
-    {
-        
-        int retVal = getCovarianceMatrixType_0(nativeObj);
-        
-        return retVal;
-    }
-
-
-    //
-    // C++:  void setCovarianceMatrixType(int val)
-    //
-
-    //javadoc: EM::setCovarianceMatrixType(val)
-    public  void setCovarianceMatrixType(int val)
-    {
-        
-        setCovarianceMatrixType_0(nativeObj, val);
-        
-        return;
-    }
-
-
-    //
-    // C++:  TermCriteria getTermCriteria()
-    //
-
-    //javadoc: EM::getTermCriteria()
-    public  TermCriteria getTermCriteria()
-    {
-        
-        TermCriteria retVal = new TermCriteria(getTermCriteria_0(nativeObj));
-        
-        return retVal;
-    }
-
-
-    //
-    // C++:  void setTermCriteria(TermCriteria val)
-    //
-
-    //javadoc: EM::setTermCriteria(val)
-    public  void setTermCriteria(TermCriteria val)
-    {
-        
-        setTermCriteria_0(nativeObj, val.type, val.maxCount, val.epsilon);
-        
-        return;
     }
 
 
@@ -125,14 +58,28 @@ public class EM extends StatModel {
 
 
     //
-    // C++:  Mat getMeans()
+    // C++: static Ptr_EM create()
     //
 
-    //javadoc: EM::getMeans()
-    public  Mat getMeans()
+    //javadoc: EM::create()
+    public static EM create()
     {
         
-        Mat retVal = new Mat(getMeans_0(nativeObj));
+        EM retVal = new EM(create_0());
+        
+        return retVal;
+    }
+
+
+    //
+    // C++:  TermCriteria getTermCriteria()
+    //
+
+    //javadoc: EM::getTermCriteria()
+    public  TermCriteria getTermCriteria()
+    {
+        
+        TermCriteria retVal = new TermCriteria(getTermCriteria_0(nativeObj));
         
         return retVal;
     }
@@ -147,29 +94,6 @@ public class EM extends StatModel {
     {
         
         double[] retVal = predict2_0(nativeObj, sample.nativeObj, probs.nativeObj);
-        
-        return retVal;
-    }
-
-
-    //
-    // C++:  bool trainEM(Mat samples, Mat& logLikelihoods = Mat(), Mat& labels = Mat(), Mat& probs = Mat())
-    //
-
-    //javadoc: EM::trainEM(samples, logLikelihoods, labels, probs)
-    public  boolean trainEM(Mat samples, Mat logLikelihoods, Mat labels, Mat probs)
-    {
-        
-        boolean retVal = trainEM_0(nativeObj, samples.nativeObj, logLikelihoods.nativeObj, labels.nativeObj, probs.nativeObj);
-        
-        return retVal;
-    }
-
-    //javadoc: EM::trainEM(samples)
-    public  boolean trainEM(Mat samples)
-    {
-        
-        boolean retVal = trainEM_1(nativeObj, samples.nativeObj);
         
         return retVal;
     }
@@ -199,6 +123,29 @@ public class EM extends StatModel {
 
 
     //
+    // C++:  bool trainEM(Mat samples, Mat& logLikelihoods = Mat(), Mat& labels = Mat(), Mat& probs = Mat())
+    //
+
+    //javadoc: EM::trainEM(samples, logLikelihoods, labels, probs)
+    public  boolean trainEM(Mat samples, Mat logLikelihoods, Mat labels, Mat probs)
+    {
+        
+        boolean retVal = trainEM_0(nativeObj, samples.nativeObj, logLikelihoods.nativeObj, labels.nativeObj, probs.nativeObj);
+        
+        return retVal;
+    }
+
+    //javadoc: EM::trainEM(samples)
+    public  boolean trainEM(Mat samples)
+    {
+        
+        boolean retVal = trainEM_1(nativeObj, samples.nativeObj);
+        
+        return retVal;
+    }
+
+
+    //
     // C++:  bool trainM(Mat samples, Mat probs0, Mat& logLikelihoods = Mat(), Mat& labels = Mat(), Mat& probs = Mat())
     //
 
@@ -222,16 +169,87 @@ public class EM extends StatModel {
 
 
     //
-    // C++: static Ptr_EM create()
+    // C++:  int getClustersNumber()
     //
 
-    //javadoc: EM::create()
-    public static EM create()
+    //javadoc: EM::getClustersNumber()
+    public  int getClustersNumber()
     {
         
-        EM retVal = new EM(create_0());
+        int retVal = getClustersNumber_0(nativeObj);
         
         return retVal;
+    }
+
+
+    //
+    // C++:  int getCovarianceMatrixType()
+    //
+
+    //javadoc: EM::getCovarianceMatrixType()
+    public  int getCovarianceMatrixType()
+    {
+        
+        int retVal = getCovarianceMatrixType_0(nativeObj);
+        
+        return retVal;
+    }
+
+
+    //
+    // C++:  void getCovs(vector_Mat& covs)
+    //
+
+    //javadoc: EM::getCovs(covs)
+    public  void getCovs(List<Mat> covs)
+    {
+        Mat covs_mat = new Mat();
+        getCovs_0(nativeObj, covs_mat.nativeObj);
+        Converters.Mat_to_vector_Mat(covs_mat, covs);
+        covs_mat.release();
+        return;
+    }
+
+
+    //
+    // C++:  void setClustersNumber(int val)
+    //
+
+    //javadoc: EM::setClustersNumber(val)
+    public  void setClustersNumber(int val)
+    {
+        
+        setClustersNumber_0(nativeObj, val);
+        
+        return;
+    }
+
+
+    //
+    // C++:  void setCovarianceMatrixType(int val)
+    //
+
+    //javadoc: EM::setCovarianceMatrixType(val)
+    public  void setCovarianceMatrixType(int val)
+    {
+        
+        setCovarianceMatrixType_0(nativeObj, val);
+        
+        return;
+    }
+
+
+    //
+    // C++:  void setTermCriteria(TermCriteria val)
+    //
+
+    //javadoc: EM::setTermCriteria(val)
+    public  void setTermCriteria(TermCriteria val)
+    {
+        
+        setTermCriteria_0(nativeObj, val.type, val.maxCount, val.epsilon);
+        
+        return;
     }
 
 
@@ -242,47 +260,50 @@ public class EM extends StatModel {
 
 
 
-    // C++:  int getClustersNumber()
-    private static native int getClustersNumber_0(long nativeObj);
-
-    // C++:  void setClustersNumber(int val)
-    private static native void setClustersNumber_0(long nativeObj, int val);
-
-    // C++:  int getCovarianceMatrixType()
-    private static native int getCovarianceMatrixType_0(long nativeObj);
-
-    // C++:  void setCovarianceMatrixType(int val)
-    private static native void setCovarianceMatrixType_0(long nativeObj, int val);
-
-    // C++:  TermCriteria getTermCriteria()
-    private static native double[] getTermCriteria_0(long nativeObj);
-
-    // C++:  void setTermCriteria(TermCriteria val)
-    private static native void setTermCriteria_0(long nativeObj, int val_type, int val_maxCount, double val_epsilon);
+    // C++:  Mat getMeans()
+    private static native long getMeans_0(long nativeObj);
 
     // C++:  Mat getWeights()
     private static native long getWeights_0(long nativeObj);
 
-    // C++:  Mat getMeans()
-    private static native long getMeans_0(long nativeObj);
+    // C++: static Ptr_EM create()
+    private static native long create_0();
+
+    // C++:  TermCriteria getTermCriteria()
+    private static native double[] getTermCriteria_0(long nativeObj);
 
     // C++:  Vec2d predict2(Mat sample, Mat& probs)
     private static native double[] predict2_0(long nativeObj, long sample_nativeObj, long probs_nativeObj);
-
-    // C++:  bool trainEM(Mat samples, Mat& logLikelihoods = Mat(), Mat& labels = Mat(), Mat& probs = Mat())
-    private static native boolean trainEM_0(long nativeObj, long samples_nativeObj, long logLikelihoods_nativeObj, long labels_nativeObj, long probs_nativeObj);
-    private static native boolean trainEM_1(long nativeObj, long samples_nativeObj);
 
     // C++:  bool trainE(Mat samples, Mat means0, Mat covs0 = Mat(), Mat weights0 = Mat(), Mat& logLikelihoods = Mat(), Mat& labels = Mat(), Mat& probs = Mat())
     private static native boolean trainE_0(long nativeObj, long samples_nativeObj, long means0_nativeObj, long covs0_nativeObj, long weights0_nativeObj, long logLikelihoods_nativeObj, long labels_nativeObj, long probs_nativeObj);
     private static native boolean trainE_1(long nativeObj, long samples_nativeObj, long means0_nativeObj);
 
+    // C++:  bool trainEM(Mat samples, Mat& logLikelihoods = Mat(), Mat& labels = Mat(), Mat& probs = Mat())
+    private static native boolean trainEM_0(long nativeObj, long samples_nativeObj, long logLikelihoods_nativeObj, long labels_nativeObj, long probs_nativeObj);
+    private static native boolean trainEM_1(long nativeObj, long samples_nativeObj);
+
     // C++:  bool trainM(Mat samples, Mat probs0, Mat& logLikelihoods = Mat(), Mat& labels = Mat(), Mat& probs = Mat())
     private static native boolean trainM_0(long nativeObj, long samples_nativeObj, long probs0_nativeObj, long logLikelihoods_nativeObj, long labels_nativeObj, long probs_nativeObj);
     private static native boolean trainM_1(long nativeObj, long samples_nativeObj, long probs0_nativeObj);
 
-    // C++: static Ptr_EM create()
-    private static native long create_0();
+    // C++:  int getClustersNumber()
+    private static native int getClustersNumber_0(long nativeObj);
+
+    // C++:  int getCovarianceMatrixType()
+    private static native int getCovarianceMatrixType_0(long nativeObj);
+
+    // C++:  void getCovs(vector_Mat& covs)
+    private static native void getCovs_0(long nativeObj, long covs_mat_nativeObj);
+
+    // C++:  void setClustersNumber(int val)
+    private static native void setClustersNumber_0(long nativeObj, int val);
+
+    // C++:  void setCovarianceMatrixType(int val)
+    private static native void setCovarianceMatrixType_0(long nativeObj, int val);
+
+    // C++:  void setTermCriteria(TermCriteria val)
+    private static native void setTermCriteria_0(long nativeObj, int val_type, int val_maxCount, double val_epsilon);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

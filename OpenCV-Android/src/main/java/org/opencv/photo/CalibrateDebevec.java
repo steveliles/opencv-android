@@ -14,6 +14,20 @@ public class CalibrateDebevec extends CalibrateCRF {
 
 
     //
+    // C++:  bool getRandom()
+    //
+
+    //javadoc: CalibrateDebevec::getRandom()
+    public  boolean getRandom()
+    {
+        
+        boolean retVal = getRandom_0(nativeObj);
+        
+        return retVal;
+    }
+
+
+    //
     // C++:  float getLambda()
     //
 
@@ -22,6 +36,20 @@ public class CalibrateDebevec extends CalibrateCRF {
     {
         
         float retVal = getLambda_0(nativeObj);
+        
+        return retVal;
+    }
+
+
+    //
+    // C++:  int getSamples()
+    //
+
+    //javadoc: CalibrateDebevec::getSamples()
+    public  int getSamples()
+    {
+        
+        int retVal = getSamples_0(nativeObj);
         
         return retVal;
     }
@@ -42,16 +70,16 @@ public class CalibrateDebevec extends CalibrateCRF {
 
 
     //
-    // C++:  int getSamples()
+    // C++:  void setRandom(bool random)
     //
 
-    //javadoc: CalibrateDebevec::getSamples()
-    public  int getSamples()
+    //javadoc: CalibrateDebevec::setRandom(random)
+    public  void setRandom(boolean random)
     {
         
-        int retVal = getSamples_0(nativeObj);
+        setRandom_0(nativeObj, random);
         
-        return retVal;
+        return;
     }
 
 
@@ -69,34 +97,6 @@ public class CalibrateDebevec extends CalibrateCRF {
     }
 
 
-    //
-    // C++:  bool getRandom()
-    //
-
-    //javadoc: CalibrateDebevec::getRandom()
-    public  boolean getRandom()
-    {
-        
-        boolean retVal = getRandom_0(nativeObj);
-        
-        return retVal;
-    }
-
-
-    //
-    // C++:  void setRandom(bool random)
-    //
-
-    //javadoc: CalibrateDebevec::setRandom(random)
-    public  void setRandom(boolean random)
-    {
-        
-        setRandom_0(nativeObj, random);
-        
-        return;
-    }
-
-
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -104,23 +104,23 @@ public class CalibrateDebevec extends CalibrateCRF {
 
 
 
+    // C++:  bool getRandom()
+    private static native boolean getRandom_0(long nativeObj);
+
     // C++:  float getLambda()
     private static native float getLambda_0(long nativeObj);
-
-    // C++:  void setLambda(float lambda)
-    private static native void setLambda_0(long nativeObj, float lambda);
 
     // C++:  int getSamples()
     private static native int getSamples_0(long nativeObj);
 
-    // C++:  void setSamples(int samples)
-    private static native void setSamples_0(long nativeObj, int samples);
-
-    // C++:  bool getRandom()
-    private static native boolean getRandom_0(long nativeObj);
+    // C++:  void setLambda(float lambda)
+    private static native void setLambda_0(long nativeObj, float lambda);
 
     // C++:  void setRandom(bool random)
     private static native void setRandom_0(long nativeObj, boolean random);
+
+    // C++:  void setSamples(int samples)
+    private static native void setSamples_0(long nativeObj, int samples);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

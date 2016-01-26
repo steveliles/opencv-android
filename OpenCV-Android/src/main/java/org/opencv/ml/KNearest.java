@@ -19,30 +19,16 @@ public class KNearest extends StatModel {
 
 
     //
-    // C++:  int getDefaultK()
+    // C++: static Ptr_KNearest create()
     //
 
-    //javadoc: KNearest::getDefaultK()
-    public  int getDefaultK()
+    //javadoc: KNearest::create()
+    public static KNearest create()
     {
         
-        int retVal = getDefaultK_0(nativeObj);
+        KNearest retVal = new KNearest(create_0());
         
         return retVal;
-    }
-
-
-    //
-    // C++:  void setDefaultK(int val)
-    //
-
-    //javadoc: KNearest::setDefaultK(val)
-    public  void setDefaultK(int val)
-    {
-        
-        setDefaultK_0(nativeObj, val);
-        
-        return;
     }
 
 
@@ -57,76 +43,6 @@ public class KNearest extends StatModel {
         boolean retVal = getIsClassifier_0(nativeObj);
         
         return retVal;
-    }
-
-
-    //
-    // C++:  void setIsClassifier(bool val)
-    //
-
-    //javadoc: KNearest::setIsClassifier(val)
-    public  void setIsClassifier(boolean val)
-    {
-        
-        setIsClassifier_0(nativeObj, val);
-        
-        return;
-    }
-
-
-    //
-    // C++:  int getEmax()
-    //
-
-    //javadoc: KNearest::getEmax()
-    public  int getEmax()
-    {
-        
-        int retVal = getEmax_0(nativeObj);
-        
-        return retVal;
-    }
-
-
-    //
-    // C++:  void setEmax(int val)
-    //
-
-    //javadoc: KNearest::setEmax(val)
-    public  void setEmax(int val)
-    {
-        
-        setEmax_0(nativeObj, val);
-        
-        return;
-    }
-
-
-    //
-    // C++:  int getAlgorithmType()
-    //
-
-    //javadoc: KNearest::getAlgorithmType()
-    public  int getAlgorithmType()
-    {
-        
-        int retVal = getAlgorithmType_0(nativeObj);
-        
-        return retVal;
-    }
-
-
-    //
-    // C++:  void setAlgorithmType(int val)
-    //
-
-    //javadoc: KNearest::setAlgorithmType(val)
-    public  void setAlgorithmType(int val)
-    {
-        
-        setAlgorithmType_0(nativeObj, val);
-        
-        return;
     }
 
 
@@ -154,16 +70,100 @@ public class KNearest extends StatModel {
 
 
     //
-    // C++: static Ptr_KNearest create()
+    // C++:  int getAlgorithmType()
     //
 
-    //javadoc: KNearest::create()
-    public static KNearest create()
+    //javadoc: KNearest::getAlgorithmType()
+    public  int getAlgorithmType()
     {
         
-        KNearest retVal = new KNearest(create_0());
+        int retVal = getAlgorithmType_0(nativeObj);
         
         return retVal;
+    }
+
+
+    //
+    // C++:  int getDefaultK()
+    //
+
+    //javadoc: KNearest::getDefaultK()
+    public  int getDefaultK()
+    {
+        
+        int retVal = getDefaultK_0(nativeObj);
+        
+        return retVal;
+    }
+
+
+    //
+    // C++:  int getEmax()
+    //
+
+    //javadoc: KNearest::getEmax()
+    public  int getEmax()
+    {
+        
+        int retVal = getEmax_0(nativeObj);
+        
+        return retVal;
+    }
+
+
+    //
+    // C++:  void setAlgorithmType(int val)
+    //
+
+    //javadoc: KNearest::setAlgorithmType(val)
+    public  void setAlgorithmType(int val)
+    {
+        
+        setAlgorithmType_0(nativeObj, val);
+        
+        return;
+    }
+
+
+    //
+    // C++:  void setDefaultK(int val)
+    //
+
+    //javadoc: KNearest::setDefaultK(val)
+    public  void setDefaultK(int val)
+    {
+        
+        setDefaultK_0(nativeObj, val);
+        
+        return;
+    }
+
+
+    //
+    // C++:  void setEmax(int val)
+    //
+
+    //javadoc: KNearest::setEmax(val)
+    public  void setEmax(int val)
+    {
+        
+        setEmax_0(nativeObj, val);
+        
+        return;
+    }
+
+
+    //
+    // C++:  void setIsClassifier(bool val)
+    //
+
+    //javadoc: KNearest::setIsClassifier(val)
+    public  void setIsClassifier(boolean val)
+    {
+        
+        setIsClassifier_0(nativeObj, val);
+        
+        return;
     }
 
 
@@ -174,36 +174,36 @@ public class KNearest extends StatModel {
 
 
 
-    // C++:  int getDefaultK()
-    private static native int getDefaultK_0(long nativeObj);
-
-    // C++:  void setDefaultK(int val)
-    private static native void setDefaultK_0(long nativeObj, int val);
+    // C++: static Ptr_KNearest create()
+    private static native long create_0();
 
     // C++:  bool getIsClassifier()
     private static native boolean getIsClassifier_0(long nativeObj);
-
-    // C++:  void setIsClassifier(bool val)
-    private static native void setIsClassifier_0(long nativeObj, boolean val);
-
-    // C++:  int getEmax()
-    private static native int getEmax_0(long nativeObj);
-
-    // C++:  void setEmax(int val)
-    private static native void setEmax_0(long nativeObj, int val);
-
-    // C++:  int getAlgorithmType()
-    private static native int getAlgorithmType_0(long nativeObj);
-
-    // C++:  void setAlgorithmType(int val)
-    private static native void setAlgorithmType_0(long nativeObj, int val);
 
     // C++:  float findNearest(Mat samples, int k, Mat& results, Mat& neighborResponses = Mat(), Mat& dist = Mat())
     private static native float findNearest_0(long nativeObj, long samples_nativeObj, int k, long results_nativeObj, long neighborResponses_nativeObj, long dist_nativeObj);
     private static native float findNearest_1(long nativeObj, long samples_nativeObj, int k, long results_nativeObj);
 
-    // C++: static Ptr_KNearest create()
-    private static native long create_0();
+    // C++:  int getAlgorithmType()
+    private static native int getAlgorithmType_0(long nativeObj);
+
+    // C++:  int getDefaultK()
+    private static native int getDefaultK_0(long nativeObj);
+
+    // C++:  int getEmax()
+    private static native int getEmax_0(long nativeObj);
+
+    // C++:  void setAlgorithmType(int val)
+    private static native void setAlgorithmType_0(long nativeObj, int val);
+
+    // C++:  void setDefaultK(int val)
+    private static native void setDefaultK_0(long nativeObj, int val);
+
+    // C++:  void setEmax(int val)
+    private static native void setEmax_0(long nativeObj, int val);
+
+    // C++:  void setIsClassifier(bool val)
+    private static native void setIsClassifier_0(long nativeObj, boolean val);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

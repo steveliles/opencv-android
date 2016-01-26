@@ -14,58 +14,16 @@ public class BackgroundSubtractorKNN extends BackgroundSubtractor {
 
 
     //
-    // C++:  int getHistory()
+    // C++:  bool getDetectShadows()
     //
 
-    //javadoc: BackgroundSubtractorKNN::getHistory()
-    public  int getHistory()
+    //javadoc: BackgroundSubtractorKNN::getDetectShadows()
+    public  boolean getDetectShadows()
     {
         
-        int retVal = getHistory_0(nativeObj);
+        boolean retVal = getDetectShadows_0(nativeObj);
         
         return retVal;
-    }
-
-
-    //
-    // C++:  void setHistory(int history)
-    //
-
-    //javadoc: BackgroundSubtractorKNN::setHistory(history)
-    public  void setHistory(int history)
-    {
-        
-        setHistory_0(nativeObj, history);
-        
-        return;
-    }
-
-
-    //
-    // C++:  int getNSamples()
-    //
-
-    //javadoc: BackgroundSubtractorKNN::getNSamples()
-    public  int getNSamples()
-    {
-        
-        int retVal = getNSamples_0(nativeObj);
-        
-        return retVal;
-    }
-
-
-    //
-    // C++:  void setNSamples(int _nN)
-    //
-
-    //javadoc: BackgroundSubtractorKNN::setNSamples(_nN)
-    public  void setNSamples(int _nN)
-    {
-        
-        setNSamples_0(nativeObj, _nN);
-        
-        return;
     }
 
 
@@ -84,16 +42,58 @@ public class BackgroundSubtractorKNN extends BackgroundSubtractor {
 
 
     //
-    // C++:  void setDist2Threshold(double _dist2Threshold)
+    // C++:  double getShadowThreshold()
     //
 
-    //javadoc: BackgroundSubtractorKNN::setDist2Threshold(_dist2Threshold)
-    public  void setDist2Threshold(double _dist2Threshold)
+    //javadoc: BackgroundSubtractorKNN::getShadowThreshold()
+    public  double getShadowThreshold()
     {
         
-        setDist2Threshold_0(nativeObj, _dist2Threshold);
+        double retVal = getShadowThreshold_0(nativeObj);
         
-        return;
+        return retVal;
+    }
+
+
+    //
+    // C++:  int getHistory()
+    //
+
+    //javadoc: BackgroundSubtractorKNN::getHistory()
+    public  int getHistory()
+    {
+        
+        int retVal = getHistory_0(nativeObj);
+        
+        return retVal;
+    }
+
+
+    //
+    // C++:  int getNSamples()
+    //
+
+    //javadoc: BackgroundSubtractorKNN::getNSamples()
+    public  int getNSamples()
+    {
+        
+        int retVal = getNSamples_0(nativeObj);
+        
+        return retVal;
+    }
+
+
+    //
+    // C++:  int getShadowValue()
+    //
+
+    //javadoc: BackgroundSubtractorKNN::getShadowValue()
+    public  int getShadowValue()
+    {
+        
+        int retVal = getShadowValue_0(nativeObj);
+        
+        return retVal;
     }
 
 
@@ -106,34 +106,6 @@ public class BackgroundSubtractorKNN extends BackgroundSubtractor {
     {
         
         int retVal = getkNNSamples_0(nativeObj);
-        
-        return retVal;
-    }
-
-
-    //
-    // C++:  void setkNNSamples(int _nkNN)
-    //
-
-    //javadoc: BackgroundSubtractorKNN::setkNNSamples(_nkNN)
-    public  void setkNNSamples(int _nkNN)
-    {
-        
-        setkNNSamples_0(nativeObj, _nkNN);
-        
-        return;
-    }
-
-
-    //
-    // C++:  bool getDetectShadows()
-    //
-
-    //javadoc: BackgroundSubtractorKNN::getDetectShadows()
-    public  boolean getDetectShadows()
-    {
-        
-        boolean retVal = getDetectShadows_0(nativeObj);
         
         return retVal;
     }
@@ -154,16 +126,58 @@ public class BackgroundSubtractorKNN extends BackgroundSubtractor {
 
 
     //
-    // C++:  int getShadowValue()
+    // C++:  void setDist2Threshold(double _dist2Threshold)
     //
 
-    //javadoc: BackgroundSubtractorKNN::getShadowValue()
-    public  int getShadowValue()
+    //javadoc: BackgroundSubtractorKNN::setDist2Threshold(_dist2Threshold)
+    public  void setDist2Threshold(double _dist2Threshold)
     {
         
-        int retVal = getShadowValue_0(nativeObj);
+        setDist2Threshold_0(nativeObj, _dist2Threshold);
         
-        return retVal;
+        return;
+    }
+
+
+    //
+    // C++:  void setHistory(int history)
+    //
+
+    //javadoc: BackgroundSubtractorKNN::setHistory(history)
+    public  void setHistory(int history)
+    {
+        
+        setHistory_0(nativeObj, history);
+        
+        return;
+    }
+
+
+    //
+    // C++:  void setNSamples(int _nN)
+    //
+
+    //javadoc: BackgroundSubtractorKNN::setNSamples(_nN)
+    public  void setNSamples(int _nN)
+    {
+        
+        setNSamples_0(nativeObj, _nN);
+        
+        return;
+    }
+
+
+    //
+    // C++:  void setShadowThreshold(double threshold)
+    //
+
+    //javadoc: BackgroundSubtractorKNN::setShadowThreshold(threshold)
+    public  void setShadowThreshold(double threshold)
+    {
+        
+        setShadowThreshold_0(nativeObj, threshold);
+        
+        return;
     }
 
 
@@ -182,28 +196,14 @@ public class BackgroundSubtractorKNN extends BackgroundSubtractor {
 
 
     //
-    // C++:  double getShadowThreshold()
+    // C++:  void setkNNSamples(int _nkNN)
     //
 
-    //javadoc: BackgroundSubtractorKNN::getShadowThreshold()
-    public  double getShadowThreshold()
+    //javadoc: BackgroundSubtractorKNN::setkNNSamples(_nkNN)
+    public  void setkNNSamples(int _nkNN)
     {
         
-        double retVal = getShadowThreshold_0(nativeObj);
-        
-        return retVal;
-    }
-
-
-    //
-    // C++:  void setShadowThreshold(double threshold)
-    //
-
-    //javadoc: BackgroundSubtractorKNN::setShadowThreshold(threshold)
-    public  void setShadowThreshold(double threshold)
-    {
-        
-        setShadowThreshold_0(nativeObj, threshold);
+        setkNNSamples_0(nativeObj, _nkNN);
         
         return;
     }
@@ -216,47 +216,47 @@ public class BackgroundSubtractorKNN extends BackgroundSubtractor {
 
 
 
-    // C++:  int getHistory()
-    private static native int getHistory_0(long nativeObj);
-
-    // C++:  void setHistory(int history)
-    private static native void setHistory_0(long nativeObj, int history);
-
-    // C++:  int getNSamples()
-    private static native int getNSamples_0(long nativeObj);
-
-    // C++:  void setNSamples(int _nN)
-    private static native void setNSamples_0(long nativeObj, int _nN);
+    // C++:  bool getDetectShadows()
+    private static native boolean getDetectShadows_0(long nativeObj);
 
     // C++:  double getDist2Threshold()
     private static native double getDist2Threshold_0(long nativeObj);
 
-    // C++:  void setDist2Threshold(double _dist2Threshold)
-    private static native void setDist2Threshold_0(long nativeObj, double _dist2Threshold);
+    // C++:  double getShadowThreshold()
+    private static native double getShadowThreshold_0(long nativeObj);
 
-    // C++:  int getkNNSamples()
-    private static native int getkNNSamples_0(long nativeObj);
+    // C++:  int getHistory()
+    private static native int getHistory_0(long nativeObj);
 
-    // C++:  void setkNNSamples(int _nkNN)
-    private static native void setkNNSamples_0(long nativeObj, int _nkNN);
-
-    // C++:  bool getDetectShadows()
-    private static native boolean getDetectShadows_0(long nativeObj);
-
-    // C++:  void setDetectShadows(bool detectShadows)
-    private static native void setDetectShadows_0(long nativeObj, boolean detectShadows);
+    // C++:  int getNSamples()
+    private static native int getNSamples_0(long nativeObj);
 
     // C++:  int getShadowValue()
     private static native int getShadowValue_0(long nativeObj);
 
-    // C++:  void setShadowValue(int value)
-    private static native void setShadowValue_0(long nativeObj, int value);
+    // C++:  int getkNNSamples()
+    private static native int getkNNSamples_0(long nativeObj);
 
-    // C++:  double getShadowThreshold()
-    private static native double getShadowThreshold_0(long nativeObj);
+    // C++:  void setDetectShadows(bool detectShadows)
+    private static native void setDetectShadows_0(long nativeObj, boolean detectShadows);
+
+    // C++:  void setDist2Threshold(double _dist2Threshold)
+    private static native void setDist2Threshold_0(long nativeObj, double _dist2Threshold);
+
+    // C++:  void setHistory(int history)
+    private static native void setHistory_0(long nativeObj, int history);
+
+    // C++:  void setNSamples(int _nN)
+    private static native void setNSamples_0(long nativeObj, int _nN);
 
     // C++:  void setShadowThreshold(double threshold)
     private static native void setShadowThreshold_0(long nativeObj, double threshold);
+
+    // C++:  void setShadowValue(int value)
+    private static native void setShadowValue_0(long nativeObj, int value);
+
+    // C++:  void setkNNSamples(int _nkNN)
+    private static native void setkNNSamples_0(long nativeObj, int _nkNN);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

@@ -22,20 +22,6 @@ public class StatModel extends Algorithm {
 
 
     //
-    // C++:  int getVarCount()
-    //
-
-    //javadoc: StatModel::getVarCount()
-    public  int getVarCount()
-    {
-        
-        int retVal = getVarCount_0(nativeObj);
-        
-        return retVal;
-    }
-
-
-    //
     // C++:  bool empty()
     //
 
@@ -44,20 +30,6 @@ public class StatModel extends Algorithm {
     {
         
         boolean retVal = empty_0(nativeObj);
-        
-        return retVal;
-    }
-
-
-    //
-    // C++:  bool isTrained()
-    //
-
-    //javadoc: StatModel::isTrained()
-    public  boolean isTrained()
-    {
-        
-        boolean retVal = isTrained_0(nativeObj);
         
         return retVal;
     }
@@ -78,10 +50,17 @@ public class StatModel extends Algorithm {
 
 
     //
-    // C++:  bool train(Ptr_TrainData trainData, int flags = 0)
+    // C++:  bool isTrained()
     //
 
-    // Unknown type 'Ptr_TrainData' (I), skipping the function
+    //javadoc: StatModel::isTrained()
+    public  boolean isTrained()
+    {
+        
+        boolean retVal = isTrained_0(nativeObj);
+        
+        return retVal;
+    }
 
 
     //
@@ -96,6 +75,13 @@ public class StatModel extends Algorithm {
         
         return retVal;
     }
+
+
+    //
+    // C++:  bool train(Ptr_TrainData trainData, int flags = 0)
+    //
+
+    // Unknown type 'Ptr_TrainData' (I), skipping the function
 
 
     //
@@ -128,6 +114,20 @@ public class StatModel extends Algorithm {
     }
 
 
+    //
+    // C++:  int getVarCount()
+    //
+
+    //javadoc: StatModel::getVarCount()
+    public  int getVarCount()
+    {
+        
+        int retVal = getVarCount_0(nativeObj);
+        
+        return retVal;
+    }
+
+
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -135,17 +135,14 @@ public class StatModel extends Algorithm {
 
 
 
-    // C++:  int getVarCount()
-    private static native int getVarCount_0(long nativeObj);
-
     // C++:  bool empty()
     private static native boolean empty_0(long nativeObj);
 
-    // C++:  bool isTrained()
-    private static native boolean isTrained_0(long nativeObj);
-
     // C++:  bool isClassifier()
     private static native boolean isClassifier_0(long nativeObj);
+
+    // C++:  bool isTrained()
+    private static native boolean isTrained_0(long nativeObj);
 
     // C++:  bool train(Mat samples, int layout, Mat responses)
     private static native boolean train_0(long nativeObj, long samples_nativeObj, int layout, long responses_nativeObj);
@@ -153,6 +150,9 @@ public class StatModel extends Algorithm {
     // C++:  float predict(Mat samples, Mat& results = Mat(), int flags = 0)
     private static native float predict_0(long nativeObj, long samples_nativeObj, long results_nativeObj, int flags);
     private static native float predict_1(long nativeObj, long samples_nativeObj);
+
+    // C++:  int getVarCount()
+    private static native int getVarCount_0(long nativeObj);
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

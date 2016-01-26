@@ -27,20 +27,6 @@ public class HOGDescriptor {
 
 
     //
-    // C++:   HOGDescriptor()
-    //
-
-    //javadoc: HOGDescriptor::HOGDescriptor()
-    public   HOGDescriptor()
-    {
-        
-        nativeObj = HOGDescriptor_0();
-        
-        return;
-    }
-
-
-    //
     // C++:   HOGDescriptor(Size _winSize, Size _blockSize, Size _blockStride, Size _cellSize, int _nbins, int _derivAperture = 1, double _winSigma = -1, int _histogramNormType = HOGDescriptor::L2Hys, double _L2HysThreshold = 0.2, bool _gammaCorrection = false, int _nlevels = HOGDescriptor::DEFAULT_NLEVELS, bool _signedGradient = false)
     //
 
@@ -48,7 +34,7 @@ public class HOGDescriptor {
     public   HOGDescriptor(Size _winSize, Size _blockSize, Size _blockStride, Size _cellSize, int _nbins, int _derivAperture, double _winSigma, int _histogramNormType, double _L2HysThreshold, boolean _gammaCorrection, int _nlevels, boolean _signedGradient)
     {
         
-        nativeObj = HOGDescriptor_1(_winSize.width, _winSize.height, _blockSize.width, _blockSize.height, _blockStride.width, _blockStride.height, _cellSize.width, _cellSize.height, _nbins, _derivAperture, _winSigma, _histogramNormType, _L2HysThreshold, _gammaCorrection, _nlevels, _signedGradient);
+        nativeObj = HOGDescriptor_0(_winSize.width, _winSize.height, _blockSize.width, _blockSize.height, _blockStride.width, _blockStride.height, _cellSize.width, _cellSize.height, _nbins, _derivAperture, _winSigma, _histogramNormType, _L2HysThreshold, _gammaCorrection, _nlevels, _signedGradient);
         
         return;
     }
@@ -57,7 +43,7 @@ public class HOGDescriptor {
     public   HOGDescriptor(Size _winSize, Size _blockSize, Size _blockStride, Size _cellSize, int _nbins)
     {
         
-        nativeObj = HOGDescriptor_2(_winSize.width, _winSize.height, _blockSize.width, _blockSize.height, _blockStride.width, _blockStride.height, _cellSize.width, _cellSize.height, _nbins);
+        nativeObj = HOGDescriptor_1(_winSize.width, _winSize.height, _blockSize.width, _blockSize.height, _blockStride.width, _blockStride.height, _cellSize.width, _cellSize.height, _nbins);
         
         return;
     }
@@ -71,23 +57,23 @@ public class HOGDescriptor {
     public   HOGDescriptor(String filename)
     {
         
-        nativeObj = HOGDescriptor_3(filename);
+        nativeObj = HOGDescriptor_2(filename);
         
         return;
     }
 
 
     //
-    // C++:  size_t getDescriptorSize()
+    // C++:   HOGDescriptor()
     //
 
-    //javadoc: HOGDescriptor::getDescriptorSize()
-    public  long getDescriptorSize()
+    //javadoc: HOGDescriptor::HOGDescriptor()
+    public   HOGDescriptor()
     {
         
-        long retVal = getDescriptorSize_0(nativeObj);
+        nativeObj = HOGDescriptor_3();
         
-        return retVal;
+        return;
     }
 
 
@@ -102,34 +88,6 @@ public class HOGDescriptor {
         boolean retVal = checkDetectorSize_0(nativeObj);
         
         return retVal;
-    }
-
-
-    //
-    // C++:  double getWinSigma()
-    //
-
-    //javadoc: HOGDescriptor::getWinSigma()
-    public  double getWinSigma()
-    {
-        
-        double retVal = getWinSigma_0(nativeObj);
-        
-        return retVal;
-    }
-
-
-    //
-    // C++:  void setSVMDetector(Mat _svmdetector)
-    //
-
-    //javadoc: HOGDescriptor::setSVMDetector(_svmdetector)
-    public  void setSVMDetector(Mat _svmdetector)
-    {
-        
-        setSVMDetector_0(nativeObj, _svmdetector.nativeObj);
-        
-        return;
     }
 
 
@@ -157,25 +115,58 @@ public class HOGDescriptor {
 
 
     //
-    // C++:  void save(String filename, String objname = String())
+    // C++:  double getWinSigma()
     //
 
-    //javadoc: HOGDescriptor::save(filename, objname)
-    public  void save(String filename, String objname)
+    //javadoc: HOGDescriptor::getWinSigma()
+    public  double getWinSigma()
     {
         
-        save_0(nativeObj, filename, objname);
+        double retVal = getWinSigma_0(nativeObj);
         
-        return;
+        return retVal;
     }
 
-    //javadoc: HOGDescriptor::save(filename)
-    public  void save(String filename)
+
+    //
+    // C++:  size_t getDescriptorSize()
+    //
+
+    //javadoc: HOGDescriptor::getDescriptorSize()
+    public  long getDescriptorSize()
     {
         
-        save_1(nativeObj, filename);
+        long retVal = getDescriptorSize_0(nativeObj);
         
-        return;
+        return retVal;
+    }
+
+
+    //
+    // C++: static vector_float getDaimlerPeopleDetector()
+    //
+
+    //javadoc: HOGDescriptor::getDaimlerPeopleDetector()
+    public static MatOfFloat getDaimlerPeopleDetector()
+    {
+        
+        MatOfFloat retVal = MatOfFloat.fromNativeAddr(getDaimlerPeopleDetector_0());
+        
+        return retVal;
+    }
+
+
+    //
+    // C++: static vector_float getDefaultPeopleDetector()
+    //
+
+    //javadoc: HOGDescriptor::getDefaultPeopleDetector()
+    public static MatOfFloat getDefaultPeopleDetector()
+    {
+        
+        MatOfFloat retVal = MatOfFloat.fromNativeAddr(getDefaultPeopleDetector_0());
+        
+        return retVal;
     }
 
 
@@ -198,6 +189,29 @@ public class HOGDescriptor {
     {
         Mat descriptors_mat = descriptors;
         compute_1(nativeObj, img.nativeObj, descriptors_mat.nativeObj);
+        
+        return;
+    }
+
+
+    //
+    // C++:  void computeGradient(Mat img, Mat& grad, Mat& angleOfs, Size paddingTL = Size(), Size paddingBR = Size())
+    //
+
+    //javadoc: HOGDescriptor::computeGradient(img, grad, angleOfs, paddingTL, paddingBR)
+    public  void computeGradient(Mat img, Mat grad, Mat angleOfs, Size paddingTL, Size paddingBR)
+    {
+        
+        computeGradient_0(nativeObj, img.nativeObj, grad.nativeObj, angleOfs.nativeObj, paddingTL.width, paddingTL.height, paddingBR.width, paddingBR.height);
+        
+        return;
+    }
+
+    //javadoc: HOGDescriptor::computeGradient(img, grad, angleOfs)
+    public  void computeGradient(Mat img, Mat grad, Mat angleOfs)
+    {
+        
+        computeGradient_1(nativeObj, img.nativeObj, grad.nativeObj, angleOfs.nativeObj);
         
         return;
     }
@@ -255,53 +269,39 @@ public class HOGDescriptor {
 
 
     //
-    // C++:  void computeGradient(Mat img, Mat& grad, Mat& angleOfs, Size paddingTL = Size(), Size paddingBR = Size())
+    // C++:  void save(String filename, String objname = String())
     //
 
-    //javadoc: HOGDescriptor::computeGradient(img, grad, angleOfs, paddingTL, paddingBR)
-    public  void computeGradient(Mat img, Mat grad, Mat angleOfs, Size paddingTL, Size paddingBR)
+    //javadoc: HOGDescriptor::save(filename, objname)
+    public  void save(String filename, String objname)
     {
         
-        computeGradient_0(nativeObj, img.nativeObj, grad.nativeObj, angleOfs.nativeObj, paddingTL.width, paddingTL.height, paddingBR.width, paddingBR.height);
+        save_0(nativeObj, filename, objname);
         
         return;
     }
 
-    //javadoc: HOGDescriptor::computeGradient(img, grad, angleOfs)
-    public  void computeGradient(Mat img, Mat grad, Mat angleOfs)
+    //javadoc: HOGDescriptor::save(filename)
+    public  void save(String filename)
     {
         
-        computeGradient_1(nativeObj, img.nativeObj, grad.nativeObj, angleOfs.nativeObj);
+        save_1(nativeObj, filename);
         
         return;
     }
 
 
     //
-    // C++: static vector_float getDefaultPeopleDetector()
+    // C++:  void setSVMDetector(Mat _svmdetector)
     //
 
-    //javadoc: HOGDescriptor::getDefaultPeopleDetector()
-    public static MatOfFloat getDefaultPeopleDetector()
+    //javadoc: HOGDescriptor::setSVMDetector(_svmdetector)
+    public  void setSVMDetector(Mat _svmdetector)
     {
         
-        MatOfFloat retVal = MatOfFloat.fromNativeAddr(getDefaultPeopleDetector_0());
+        setSVMDetector_0(nativeObj, _svmdetector.nativeObj);
         
-        return retVal;
-    }
-
-
-    //
-    // C++: static vector_float getDaimlerPeopleDetector()
-    //
-
-    //javadoc: HOGDescriptor::getDaimlerPeopleDetector()
-    public static MatOfFloat getDaimlerPeopleDetector()
-    {
-        
-        MatOfFloat retVal = MatOfFloat.fromNativeAddr(getDaimlerPeopleDetector_0());
-        
-        return retVal;
+        return;
     }
 
 
@@ -494,39 +494,42 @@ public class HOGDescriptor {
 
 
 
-    // C++:   HOGDescriptor()
-    private static native long HOGDescriptor_0();
-
     // C++:   HOGDescriptor(Size _winSize, Size _blockSize, Size _blockStride, Size _cellSize, int _nbins, int _derivAperture = 1, double _winSigma = -1, int _histogramNormType = HOGDescriptor::L2Hys, double _L2HysThreshold = 0.2, bool _gammaCorrection = false, int _nlevels = HOGDescriptor::DEFAULT_NLEVELS, bool _signedGradient = false)
-    private static native long HOGDescriptor_1(double _winSize_width, double _winSize_height, double _blockSize_width, double _blockSize_height, double _blockStride_width, double _blockStride_height, double _cellSize_width, double _cellSize_height, int _nbins, int _derivAperture, double _winSigma, int _histogramNormType, double _L2HysThreshold, boolean _gammaCorrection, int _nlevels, boolean _signedGradient);
-    private static native long HOGDescriptor_2(double _winSize_width, double _winSize_height, double _blockSize_width, double _blockSize_height, double _blockStride_width, double _blockStride_height, double _cellSize_width, double _cellSize_height, int _nbins);
+    private static native long HOGDescriptor_0(double _winSize_width, double _winSize_height, double _blockSize_width, double _blockSize_height, double _blockStride_width, double _blockStride_height, double _cellSize_width, double _cellSize_height, int _nbins, int _derivAperture, double _winSigma, int _histogramNormType, double _L2HysThreshold, boolean _gammaCorrection, int _nlevels, boolean _signedGradient);
+    private static native long HOGDescriptor_1(double _winSize_width, double _winSize_height, double _blockSize_width, double _blockSize_height, double _blockStride_width, double _blockStride_height, double _cellSize_width, double _cellSize_height, int _nbins);
 
     // C++:   HOGDescriptor(String filename)
-    private static native long HOGDescriptor_3(String filename);
+    private static native long HOGDescriptor_2(String filename);
 
-    // C++:  size_t getDescriptorSize()
-    private static native long getDescriptorSize_0(long nativeObj);
+    // C++:   HOGDescriptor()
+    private static native long HOGDescriptor_3();
 
     // C++:  bool checkDetectorSize()
     private static native boolean checkDetectorSize_0(long nativeObj);
-
-    // C++:  double getWinSigma()
-    private static native double getWinSigma_0(long nativeObj);
-
-    // C++:  void setSVMDetector(Mat _svmdetector)
-    private static native void setSVMDetector_0(long nativeObj, long _svmdetector_nativeObj);
 
     // C++:  bool load(String filename, String objname = String())
     private static native boolean load_0(long nativeObj, String filename, String objname);
     private static native boolean load_1(long nativeObj, String filename);
 
-    // C++:  void save(String filename, String objname = String())
-    private static native void save_0(long nativeObj, String filename, String objname);
-    private static native void save_1(long nativeObj, String filename);
+    // C++:  double getWinSigma()
+    private static native double getWinSigma_0(long nativeObj);
+
+    // C++:  size_t getDescriptorSize()
+    private static native long getDescriptorSize_0(long nativeObj);
+
+    // C++: static vector_float getDaimlerPeopleDetector()
+    private static native long getDaimlerPeopleDetector_0();
+
+    // C++: static vector_float getDefaultPeopleDetector()
+    private static native long getDefaultPeopleDetector_0();
 
     // C++:  void compute(Mat img, vector_float& descriptors, Size winStride = Size(), Size padding = Size(), vector_Point locations = std::vector<Point>())
     private static native void compute_0(long nativeObj, long img_nativeObj, long descriptors_mat_nativeObj, double winStride_width, double winStride_height, double padding_width, double padding_height, long locations_mat_nativeObj);
     private static native void compute_1(long nativeObj, long img_nativeObj, long descriptors_mat_nativeObj);
+
+    // C++:  void computeGradient(Mat img, Mat& grad, Mat& angleOfs, Size paddingTL = Size(), Size paddingBR = Size())
+    private static native void computeGradient_0(long nativeObj, long img_nativeObj, long grad_nativeObj, long angleOfs_nativeObj, double paddingTL_width, double paddingTL_height, double paddingBR_width, double paddingBR_height);
+    private static native void computeGradient_1(long nativeObj, long img_nativeObj, long grad_nativeObj, long angleOfs_nativeObj);
 
     // C++:  void detect(Mat img, vector_Point& foundLocations, vector_double& weights, double hitThreshold = 0, Size winStride = Size(), Size padding = Size(), vector_Point searchLocations = std::vector<Point>())
     private static native void detect_0(long nativeObj, long img_nativeObj, long foundLocations_mat_nativeObj, long weights_mat_nativeObj, double hitThreshold, double winStride_width, double winStride_height, double padding_width, double padding_height, long searchLocations_mat_nativeObj);
@@ -536,15 +539,12 @@ public class HOGDescriptor {
     private static native void detectMultiScale_0(long nativeObj, long img_nativeObj, long foundLocations_mat_nativeObj, long foundWeights_mat_nativeObj, double hitThreshold, double winStride_width, double winStride_height, double padding_width, double padding_height, double scale, double finalThreshold, boolean useMeanshiftGrouping);
     private static native void detectMultiScale_1(long nativeObj, long img_nativeObj, long foundLocations_mat_nativeObj, long foundWeights_mat_nativeObj);
 
-    // C++:  void computeGradient(Mat img, Mat& grad, Mat& angleOfs, Size paddingTL = Size(), Size paddingBR = Size())
-    private static native void computeGradient_0(long nativeObj, long img_nativeObj, long grad_nativeObj, long angleOfs_nativeObj, double paddingTL_width, double paddingTL_height, double paddingBR_width, double paddingBR_height);
-    private static native void computeGradient_1(long nativeObj, long img_nativeObj, long grad_nativeObj, long angleOfs_nativeObj);
+    // C++:  void save(String filename, String objname = String())
+    private static native void save_0(long nativeObj, String filename, String objname);
+    private static native void save_1(long nativeObj, String filename);
 
-    // C++: static vector_float getDefaultPeopleDetector()
-    private static native long getDefaultPeopleDetector_0();
-
-    // C++: static vector_float getDaimlerPeopleDetector()
-    private static native long getDaimlerPeopleDetector_0();
+    // C++:  void setSVMDetector(Mat _svmdetector)
+    private static native void setSVMDetector_0(long nativeObj, long _svmdetector_nativeObj);
 
     // C++: Size HOGDescriptor::winSize
     private static native double[] get_winSize_0(long nativeObj);

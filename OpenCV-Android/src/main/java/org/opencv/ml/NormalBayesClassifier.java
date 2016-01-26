@@ -14,6 +14,20 @@ public class NormalBayesClassifier extends StatModel {
 
 
     //
+    // C++: static Ptr_NormalBayesClassifier create()
+    //
+
+    //javadoc: NormalBayesClassifier::create()
+    public static NormalBayesClassifier create()
+    {
+        
+        NormalBayesClassifier retVal = new NormalBayesClassifier(create_0());
+        
+        return retVal;
+    }
+
+
+    //
     // C++:  float predictProb(Mat inputs, Mat& outputs, Mat& outputProbs, int flags = 0)
     //
 
@@ -36,20 +50,6 @@ public class NormalBayesClassifier extends StatModel {
     }
 
 
-    //
-    // C++: static Ptr_NormalBayesClassifier create()
-    //
-
-    //javadoc: NormalBayesClassifier::create()
-    public static NormalBayesClassifier create()
-    {
-        
-        NormalBayesClassifier retVal = new NormalBayesClassifier(create_0());
-        
-        return retVal;
-    }
-
-
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -57,12 +57,12 @@ public class NormalBayesClassifier extends StatModel {
 
 
 
+    // C++: static Ptr_NormalBayesClassifier create()
+    private static native long create_0();
+
     // C++:  float predictProb(Mat inputs, Mat& outputs, Mat& outputProbs, int flags = 0)
     private static native float predictProb_0(long nativeObj, long inputs_nativeObj, long outputs_nativeObj, long outputProbs_nativeObj, int flags);
     private static native float predictProb_1(long nativeObj, long inputs_nativeObj, long outputs_nativeObj, long outputProbs_nativeObj);
-
-    // C++: static Ptr_NormalBayesClassifier create()
-    private static native long create_0();
 
     // native support for java finalize()
     private static native void delete(long nativeObj);

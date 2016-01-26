@@ -21,6 +21,34 @@ public class Boost extends DTrees {
 
 
     //
+    // C++: static Ptr_Boost create()
+    //
+
+    //javadoc: Boost::create()
+    public static Boost create()
+    {
+        
+        Boost retVal = new Boost(create_0());
+        
+        return retVal;
+    }
+
+
+    //
+    // C++:  double getWeightTrimRate()
+    //
+
+    //javadoc: Boost::getWeightTrimRate()
+    public  double getWeightTrimRate()
+    {
+        
+        double retVal = getWeightTrimRate_0(nativeObj);
+        
+        return retVal;
+    }
+
+
+    //
     // C++:  int getBoostType()
     //
 
@@ -29,6 +57,20 @@ public class Boost extends DTrees {
     {
         
         int retVal = getBoostType_0(nativeObj);
+        
+        return retVal;
+    }
+
+
+    //
+    // C++:  int getWeakCount()
+    //
+
+    //javadoc: Boost::getWeakCount()
+    public  int getWeakCount()
+    {
+        
+        int retVal = getWeakCount_0(nativeObj);
         
         return retVal;
     }
@@ -49,20 +91,6 @@ public class Boost extends DTrees {
 
 
     //
-    // C++:  int getWeakCount()
-    //
-
-    //javadoc: Boost::getWeakCount()
-    public  int getWeakCount()
-    {
-        
-        int retVal = getWeakCount_0(nativeObj);
-        
-        return retVal;
-    }
-
-
-    //
     // C++:  void setWeakCount(int val)
     //
 
@@ -73,20 +101,6 @@ public class Boost extends DTrees {
         setWeakCount_0(nativeObj, val);
         
         return;
-    }
-
-
-    //
-    // C++:  double getWeightTrimRate()
-    //
-
-    //javadoc: Boost::getWeightTrimRate()
-    public  double getWeightTrimRate()
-    {
-        
-        double retVal = getWeightTrimRate_0(nativeObj);
-        
-        return retVal;
     }
 
 
@@ -104,20 +118,6 @@ public class Boost extends DTrees {
     }
 
 
-    //
-    // C++: static Ptr_Boost create()
-    //
-
-    //javadoc: Boost::create()
-    public static Boost create()
-    {
-        
-        Boost retVal = new Boost(create_0());
-        
-        return retVal;
-    }
-
-
     @Override
     protected void finalize() throws Throwable {
         delete(nativeObj);
@@ -125,26 +125,26 @@ public class Boost extends DTrees {
 
 
 
-    // C++:  int getBoostType()
-    private static native int getBoostType_0(long nativeObj);
-
-    // C++:  void setBoostType(int val)
-    private static native void setBoostType_0(long nativeObj, int val);
-
-    // C++:  int getWeakCount()
-    private static native int getWeakCount_0(long nativeObj);
-
-    // C++:  void setWeakCount(int val)
-    private static native void setWeakCount_0(long nativeObj, int val);
+    // C++: static Ptr_Boost create()
+    private static native long create_0();
 
     // C++:  double getWeightTrimRate()
     private static native double getWeightTrimRate_0(long nativeObj);
 
+    // C++:  int getBoostType()
+    private static native int getBoostType_0(long nativeObj);
+
+    // C++:  int getWeakCount()
+    private static native int getWeakCount_0(long nativeObj);
+
+    // C++:  void setBoostType(int val)
+    private static native void setBoostType_0(long nativeObj, int val);
+
+    // C++:  void setWeakCount(int val)
+    private static native void setWeakCount_0(long nativeObj, int val);
+
     // C++:  void setWeightTrimRate(double val)
     private static native void setWeightTrimRate_0(long nativeObj, double val);
-
-    // C++: static Ptr_Boost create()
-    private static native long create_0();
 
     // native support for java finalize()
     private static native void delete(long nativeObj);
